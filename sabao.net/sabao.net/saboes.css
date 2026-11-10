@@ -1,0 +1,135 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cartão central (o próprio form) */
+form {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    padding: 90px 32px 32px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+    /* Logo gerado só por CSS */
+    form::before {
+        content: "sabo.net";
+        position: absolute;
+        top: 32px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+        color: #7b5ea7;
+    }
+
+    form div {
+        margin-bottom: 18px;
+    }
+
+    /* Rótulos "E-mail:" e "Senha:" */
+    form p {
+        margin: 0 0 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #4a4a6a;
+    }
+
+.txt {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: #333;
+    background: #fff;
+    border: 2px solid #e3e3ee;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .txt:focus {
+        border-color: #7b5ea7;
+        box-shadow: 0 0 0 4px rgba(123, 94, 167, 0.15);
+    }
+
+/* Esconde os caracteres da senha apenas visualmente */
+#TxtSenha {
+    -webkit-text-security: disc;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    background: #2f64a5;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(123, 94, 167, 0.4);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+/* Bolhas de sabão decorativas (pseudo-elementos do body) */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: flutuar 8s ease-in-out infinite;
+}
+
+body::before {
+    width: 140px;
+    height: 140px;
+    top: 10%;
+    left: 10%;
+}
+
+body::after {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    right: 12%;
+    animation-delay: -4s;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
