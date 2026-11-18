@@ -1,0 +1,101 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5EEDF;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    min-height: 15vh;
+    max-height: 25vh;
+    background: #2e4981;
+    color: antiquewhite;
+    display: flex;
+}
+
+    header a {
+        text-decoration: none;
+        color: antiquewhite;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: antiquewhite;
+        display: flex;
+    }
+
+#TxtUsu, #TxtMail, #TxtSenha {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #E5DED2;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #FFFFFF;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+    #TxtUsu:focus, #TxtMail:focus, #TxtSenha:focus {
+        border-color: #A7D8F0;
+        box-shadow: 0 0 5px rgba(100,100,100,0.5);
+    }
+
+#BtnEntrar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #ADD8F0;
+    color: #34566B;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+    #BtnEntrar:hover {
+        background: #87C5E5;
+        transform: translateY(-2px);
+    }
+
+#LblAlerta {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+#form1 {
+    width: 400px;
+    padding: 40px;
+    background: #e9dec9;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+    #form1 p {
+        color: #5C5C5C;
+        font-weight: 600;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+@media (max-width: 450px) {
+    #form1 {
+        width: 90%;
+        padding: 25px;
+    }
+}
