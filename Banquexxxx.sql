@@ -6,9 +6,9 @@ go
 
 create table Usuario(
 	id_usu int identity,
-	nome_usu varchar,
-	senha_usu varchar,
-	email_usu varchar,
+	nome_usu varchar(50),
+	senha_usu varchar(50),
+	email_usu varchar(40),
 	acesso_usu tinyint,
 	constraint pk_usu primary key(id_usu)
 )
@@ -82,3 +82,7 @@ CREATE TABLE ItemPedido(
     CONSTRAINT fk_itempedido_pedido FOREIGN KEY(id_pedido)
         REFERENCES Pedido(id_pedido)
 )
+
+//Administrador
+
+insert into Usuarios (nome_usu, email_usu, senha_usu, acesso_usu) values ('Luiz Bombom Ricardo', 'luiz.bombom@gmail.com', 'Senhex_Fortex', 1)
