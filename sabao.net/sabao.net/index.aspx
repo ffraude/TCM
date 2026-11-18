@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="sabao.net.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="sabao.net.index" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
         <div>
             <p>E-mail:</p>
-            <asp:TextBox ID="TxtMail" runat="server" CssClass="txt"></asp:TextBox>
+            <asp:TextBox ID="TxtMail" runat="server" CssClass="txt" vv></asp:TextBox>
         </div>
         <div>
             <p>Senha:</p>
