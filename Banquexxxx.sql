@@ -83,6 +83,6 @@ CREATE TABLE ItemPedido(
         REFERENCES Pedido(id_pedido)
 )
 
-//Administrador
+--Administrador
 
 insert into Usuarios (nome_usu, email_usu, senha_usu, acesso_usu) values ('Luiz Bombom Ricardo', 'luiz.bombom@gmail.com', 'Senhex_Fortex', 1)
