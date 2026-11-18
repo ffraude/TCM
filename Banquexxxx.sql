@@ -8,7 +8,6 @@ create table Usuario(
 	id_usu int identity,
 	nome_usu varchar,
 	senha_usu varchar,
-	tel_usu varchar NULL,
 	email_usu varchar,
 	acesso_usu tinyint,
 	constraint pk_usu primary key(id_usu)
