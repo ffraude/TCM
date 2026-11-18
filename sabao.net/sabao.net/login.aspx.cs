@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static ClsConexao;
 
 namespace sabao.net
 {
     public partial class index : System.Web.UI.Page
     {
-        ClasseConexao conecta = new ClasseConexao();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +23,27 @@ namespace sabao.net
             { 
                 LblAviso.Text = "Preencha todos os campos.";
             }
+            else
+            {
+                Conexao banco = new Conexao();
+
+                try
+                {
+                    banco.Conectar();
+
+                    // Query aqui
+
+                }
+                catch (Exception ex)
+                {
+                    // Erro 0 resenha
+                }
+                finally
+                {
+                    banco.Desconectar();
+                }
+            }
+
             TxtMail.Text = "";
             TxtSenha.Text = "";
         }

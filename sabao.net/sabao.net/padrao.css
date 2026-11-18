@@ -1,0 +1,134 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+form {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 850px;
+    padding: 40px 32px 25px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #7b5ea7;
+    margin-bottom: 12px;
+}
+
+.descricao {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #4a4a6a;
+    margin-bottom: 35px;
+}
+
+.conteudo {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 180px;
+    padding: 25px 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #e3e3ee;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+    .card h2 {
+        margin: 0 0 18px;
+        font-size: 1rem;
+        color: #4a4a6a;
+    }
+
+.valor {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #7b5ea7;
+}
+
+footer {
+    margin-top: 35px;
+    text-align: center;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+/* Bolhas decorativas */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient( circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15) );
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: flutuar 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+body::before {
+    width: 140px;
+    height: 140px;
+    top: 10%;
+    left: 10%;
+}
+
+body::after {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    right: 12%;
+    animation-delay: -4s;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    form {
+        padding: 30px 20px;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    .conteudo {
+        flex-direction: column;
+    }
+}
