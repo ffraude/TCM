@@ -70,6 +70,22 @@ namespace Sabonet
             conexao.Close();
         }
 
+        public string getNomeUsuario(int id)
+        {
+            string retorno = "";
+            conexao.Open();
+            comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
+            comando.CommandText = @"SELECT nome_usu FROM Usuario WHERE id_usu = @varId";
+            SqlDataReader dr = comando.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                retorno = dr["nome_usu"].ToString();
+            }
+            conexao.Close();
+            return retorno;
+        }
+
         public int Entrar()
         {
             int retorno = 0;

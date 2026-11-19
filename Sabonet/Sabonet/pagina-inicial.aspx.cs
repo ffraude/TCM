@@ -11,9 +11,11 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["idUsuario"] != null)
+            ClsConexao conexao = new ClsConexao();
+            int id = Convert.ToInt32(Session["idUsuario"]);
+            if (Session["idUsuario"] != null)
             {
-                LblDescartavel.Text = Session["idUsuario"].ToString();
+                LblDescartavel.Text = "Bem-vindo(a), " + conexao.getNomeUsuario(id) + "!";
             } 
         }
     }

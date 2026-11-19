@@ -9,8 +9,11 @@
     <link href="StyleSheet1.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+    <header>
+        <a href="pagina-inicial.aspx">Sabo.net</a>
+    </header>
     <form id="form1" runat="server">
-        
+        <h2>Cadastrar na Sabo.net</h2>
         <div>
             <p>Nome de Usuário:</p>
             <asp:TextBox ID="TxtUsu" runat="server" CssClass="campo"></asp:TextBox>
