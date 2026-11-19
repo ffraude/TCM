@@ -6,10 +6,10 @@ go
 
 create table Usuario(
 	id_usu int identity,
-	nome_usu varchar(50),
-	senha_usu varchar(50),
-	email_usu varchar(40),
-	acesso_usu tinyint,
+	nome_usu varchar(50) not null,
+	senha_usu varchar(50) not null,
+	email_usu varchar(40) not null,
+	acesso_usu tinyint not null,
 	constraint pk_usu primary key(id_usu)
 )
 
