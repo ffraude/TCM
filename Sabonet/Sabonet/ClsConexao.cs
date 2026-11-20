@@ -59,9 +59,29 @@ namespace Sabonet
             return conexao;
         }
 
+        public string ConferirEmail()
+        {
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@varEmail", SqlDbType.VarChar).Value = Email;
+            comando.CommandText = @"SELECT email_usu FROM Usuario WHERE email_usu = @varEmail";
+            SqlDataReader dr = comando.ExecuteReader();
+            if (dr.HasRows)
+            {
+                return "E-mail já cadastrado.";
+            }
+
+            return "";
+            Desconectar();
+
+        }
+
         public void Gravar()
         {
             Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
             comando.Parameters.Add("@varNome", SqlDbType.VarChar).Value = Nome;
             comando.Parameters.Add("@varSenha", SqlDbType.VarChar).Value = Senha;
             comando.Parameters.Add("@varEmail", SqlDbType.VarChar).Value = Email;
@@ -97,6 +117,8 @@ namespace Sabonet
         {
             int retorno = 0;
             Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
             comando.Parameters.Add("@varEmail", SqlDbType.VarChar).Value = Email;
             comando.Parameters.Add("@varSenha", SqlDbType.VarChar).Value = Senha;
             comando.CommandText = @"SELECT id_usu FROM Usuario WHERE email_usu = @varEmail AND senha_usu = @varSenha";
