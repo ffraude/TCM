@@ -4,17 +4,6 @@ go
 use DBresenhexxxx
 go
 
-create table Usuario(
-	id_usu int identity,
-	nome_usu varchar(50) not null,
-	senha_usu varchar(50) not null,
-	email_usu varchar(40) not null,
-	acesso_usu tinyint not null,
-	constraint pk_usu primary key(id_usu)
-)
-
-go
-
 CREATE TABLE Endereco(
     id_end INT IDENTITY,
     cep VARCHAR(9),
@@ -23,10 +12,21 @@ CREATE TABLE Endereco(
     bairro VARCHAR(100),
     cidade VARCHAR(100),
     estado VARCHAR(50),
-    id_usu INT,
-    CONSTRAINT pk_end PRIMARY KEY(id_end),
-    CONSTRAINT fk_end_usu FOREIGN KEY(id_usu)
-        REFERENCES Usuario(id_usu)
+    CONSTRAINT pk_end PRIMARY KEY(id_end)
+)
+
+GO
+
+CREATE TABLE Usuario(
+    id_usu INT IDENTITY,
+    nome_usu VARCHAR(50) NOT NULL,
+    senha_usu VARCHAR(50) NOT NULL,
+    email_usu VARCHAR(40) NOT NULL,
+    acesso_usu TINYINT NOT NULL,
+    usu_id_end INT,
+    CONSTRAINT pk_usu PRIMARY KEY(id_usu),
+    CONSTRAINT fk_usu_end FOREIGN KEY(usu_id_end)
+        REFERENCES Endereco(id_end)
 )
 
 go
