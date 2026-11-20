@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="introducao.aspx" />
     <Content Include="login.aspx" />
     <Content Include="pagina-inicial.aspx" />
     <Content Include="signup.aspx" />
@@ -75,6 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsConexao.cs" />
+    <Compile Include="introducao.aspx.cs">
+      <DependentUpon>introducao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="introducao.aspx.designer.cs">
+      <DependentUpon>introducao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
