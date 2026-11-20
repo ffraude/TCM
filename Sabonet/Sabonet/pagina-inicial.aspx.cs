@@ -11,19 +11,16 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClsConexao conexao = new ClsConexao();
-            int id = Convert.ToInt32(Session["idUsuario"]);
-            if (Session["idUsuario"] != null)
+            if (Convert.ToInt16(Session["idUsuario"]) == null || Convert.ToInt16(Session["idUsuario"]) == 0)
             {
-                try
-                {
-                    LblDescartavel.Text = "Bem-vindo(a), " + conexao.getNomeUsuario(id) + "!!!";
-                }
-                catch (InvalidOperationException ex)
-                {
-                    LblDescartavel.Text = "Bem-vindo(a)!!!";
-                }
+                Response.Redirect("introducao.aspx");
             }
+            ClsConexao conexao = new ClsConexao();
+            int id = Convert.ToInt16(Session["idUsuario"]);
+            string resultadoQuery = conexao.getNomeUsuario(id);
+            Session["Nome"] = resultadoQuery;
+            LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net, " + resultadoQuery + "!";
+            LblConta.Text = resultadoQuery;
         }
     }
 }

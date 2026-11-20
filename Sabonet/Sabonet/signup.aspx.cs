@@ -34,6 +34,7 @@ namespace Sabonet
                 if (LblAlerta.Text.Equals(""))
                 {
                     conexao.Gravar();
+                    Response.Redirect("introducao.aspx");
                 }
             }
             else

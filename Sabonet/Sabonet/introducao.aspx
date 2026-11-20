@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="StyleSheet1.css" type="text/css" rel="stylesheet"/>
-    <title></title>
+    <title>Sabo.net</title>
 
     <style>
         .botao{
