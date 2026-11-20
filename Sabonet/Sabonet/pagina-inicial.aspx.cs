@@ -15,8 +15,15 @@ namespace Sabonet
             int id = Convert.ToInt32(Session["idUsuario"]);
             if (Session["idUsuario"] != null)
             {
-                LblDescartavel.Text = "Bem-vindo(a), " + conexao.getNomeUsuario(id) + "!";
-            } 
+                try
+                {
+                    LblDescartavel.Text = "Bem-vindo(a), " + conexao.getNomeUsuario(id) + "!!!";
+                }
+                catch (InvalidOperationException ex)
+                {
+                    LblDescartavel.Text = "Bem-vindo(a)!!!";
+                }
+            }
         }
     }
 }

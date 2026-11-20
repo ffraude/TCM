@@ -39,6 +39,11 @@ namespace Sabonet
             {
                 conexao.Open();
             }
+            else
+            {
+                conexao.Close();
+                conexao.Open();
+            }
         }
 
         public void Desconectar()
@@ -56,7 +61,7 @@ namespace Sabonet
 
         public void Gravar()
         {
-            conexao.Open();
+            Conectar();
             comando.Parameters.Add("@varNome", SqlDbType.VarChar).Value = Nome;
             comando.Parameters.Add("@varSenha", SqlDbType.VarChar).Value = Senha;
             comando.Parameters.Add("@varEmail", SqlDbType.VarChar).Value = Email;
@@ -67,13 +72,15 @@ namespace Sabonet
 
             comando.ExecuteNonQuery();
 
-            conexao.Close();
+            Desconectar();
         }
-
+        //Dá erro por algum motivo
         public string getNomeUsuario(int id)
         {
             string retorno = "";
-            conexao.Open();
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
             comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
             comando.CommandText = @"SELECT nome_usu FROM Usuario WHERE id_usu = @varId";
             SqlDataReader dr = comando.ExecuteReader();
@@ -82,14 +89,14 @@ namespace Sabonet
                 dr.Read();
                 retorno = dr["nome_usu"].ToString();
             }
-            conexao.Close();
+            Desconectar();
             return retorno;
         }
 
         public int Entrar()
         {
             int retorno = 0;
-            conexao.Open();
+            Conectar();
             comando.Parameters.Add("@varEmail", SqlDbType.VarChar).Value = Email;
             comando.Parameters.Add("@varSenha", SqlDbType.VarChar).Value = Senha;
             comando.CommandText = @"SELECT id_usu FROM Usuario WHERE email_usu = @varEmail AND senha_usu = @varSenha";
@@ -104,7 +111,7 @@ namespace Sabonet
             {
                 retorno = 0;
             }
-            conexao.Close();
+            Desconectar();
             return retorno;
         }
     }

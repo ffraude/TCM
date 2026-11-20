@@ -28,8 +28,8 @@ namespace Sabonet
             {
                 conexao.Email = TxtMail.Text;
                 conexao.Senha = TxtSenha.Text;
-                Session["Usuario"] = conexao.Entrar();
-                if (Session["Usuario"] != null && Convert.ToInt32(Session["Usuario"]) != 0)
+                Session["idUsuario"] = conexao.Entrar();
+                if (Session["idUsuario"] != null && Convert.ToInt32(Session["idUsuario"]) != 0)
                 {
                     Response.Redirect("pagina-inicial.aspx");
                 }
