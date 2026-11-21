@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="editar-nome.aspx" />
     <Content Include="imgexxxx\Bonzi_buddy.png" />
     <Content Include="introducao.aspx" />
     <Content Include="login.aspx" />
@@ -79,6 +80,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsConexao.cs" />
+    <Compile Include="editar-nome.aspx.cs">
+      <DependentUpon>editar-nome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editar-nome.aspx.designer.cs">
+      <DependentUpon>editar-nome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="introducao.aspx.cs">
       <DependentUpon>introducao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
