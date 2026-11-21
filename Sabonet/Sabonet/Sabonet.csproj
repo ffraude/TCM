@@ -68,9 +68,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="editar-nome.aspx" />
+    <Content Include="carrinho.aspx" />
+    <Content Include="imgexxxx\aura_maracuja.jpg" />
+    <Content Include="imgexxxx\baunilha.jpg" />
+    <Content Include="imgexxxx\bebe.jpg" />
     <Content Include="imgexxxx\Bonzi_buddy.png" />
+    <Content Include="imgexxxx\carro_fofinho.png" />
+    <Content Include="imgexxxx\frutas_vermelhas.jpg" />
+    <Content Include="imgexxxx\granado_azul.jpg" />
+    <Content Include="imgexxxx\lavanda.jpg" />
+    <Content Include="imgexxxx\maracuja_ekos.jpg" />
+    <Content Include="imgexxxx\protex_aveia.jpg" />
+    <Content Include="imgexxxx\rosas.jpg" />
     <Content Include="introducao.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="louja.aspx" />
+    <Content Include="louja.css" />
     <Content Include="pagina-inicial.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="signup.aspx" />
@@ -79,6 +92,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="carrinho.aspx.cs">
+      <DependentUpon>carrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carrinho.aspx.designer.cs">
+      <DependentUpon>carrinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClsCarrinho.cs" />
     <Compile Include="ClsConexao.cs" />
     <Compile Include="editar-nome.aspx.cs">
       <DependentUpon>editar-nome.aspx</DependentUpon>
@@ -87,6 +108,7 @@
     <Compile Include="editar-nome.aspx.designer.cs">
       <DependentUpon>editar-nome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClsItemCarrinho.cs" />
     <Compile Include="introducao.aspx.cs">
       <DependentUpon>introducao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -100,6 +122,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="louja.aspx.cs">
+      <DependentUpon>louja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="louja.aspx.designer.cs">
+      <DependentUpon>louja.aspx</DependentUpon>
     </Compile>
     <Compile Include="pagina-inicial.aspx.cs">
       <DependentUpon>pagina-inicial.aspx</DependentUpon>
