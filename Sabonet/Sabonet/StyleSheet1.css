@@ -52,6 +52,12 @@ nav {
         font-weight: 600;
     }
 
+        nav a:hover {
+            transform: translateY(-2px);
+            transition: 0.3s;
+            color: #87C5E5;
+        }
+
 /* CONTEÚDO PRINCIPAL */
 
 main {
@@ -318,35 +324,23 @@ h2 {
     
 /* RESPONSIVIDADE */
 
-@media (max-width: 600px) {
-    header {
-        padding: 0 15px;
-    }
-
-        header > a {
-            font-size: 2rem;
-        }
-
-    nav {
-        gap: 10px;
-    }
-
-        nav a {
-            font-size: 0.8rem;
-        }
-
-    .boas-vindas h1 {
-        font-size: 2rem;
-    }
-
-    .boas-vindas p {
-        font-size: 1rem;
-    }
+.confirmar:hover {
+    background: #20365f;
 }
 
-@media (max-width: 450px) {
-    #form1 {
-        width: 90%;
-        padding: 25px;
-    }
+.excluir-confirmar {
+    background: #ee1111;
 }
+
+    .excluir-confirmar:hover {
+        background: #b51010;
+    }
+
+.cancelar {
+    background: #e5e5e5;
+    color: #34566B;
+}
+
+    .cancelar:hover {
+        background: #c9c9c9;
+    }

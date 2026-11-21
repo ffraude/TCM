@@ -1,5 +1,4 @@
-﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="perfil.aspx.cs" Inherits="Sabonet.perfil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="perfil.aspx.cs" Inherits="Sabonet.perfil" %>
 
 <!DOCTYPE html>
 
@@ -11,74 +10,70 @@
 </head>
 <body>
 
-    <header>
-        <a href="pagina-inicial.aspx">Sabo.net</a>
+        <header>
+            <a href="pagina-inicial.aspx">Sabo.net</a>
 
-        <nav>
-            <a href="#">Loja</a>
-            <a href="sobre.aspx">Sobre nós</a>
-            <a href="#">Contato</a>
-            <a href="#">
-                <asp:Label ID="LblConta" runat="server" Text=""></asp:Label>
-            </a>
-        </nav>
-    </header>
+            <nav>
+                <a href="#">Loja</a>
+                <a href="sobre.aspx">Sobre nós</a>
+                <a href="#">Contato</a>
+                <a href="#">
+                    <asp:Label ID="LblConta" runat="server" Text=""></asp:Label>
+                </a>
+            </nav>
+        </header>
 
-    <main class="sect-perfil">
+        <main class="sect-perfil">
 
-        <div class="titulo-perfil">
-            <h1>Meu Perfil</h1>
-            <p>Gerencie suas informações pessoais e sua conta.</p>
-        </div>
-
-        <div class="div-perfil">
-            <div class="info-perfil">
-                <p class="nome-campo">Nome</p>
-                <p class="valor-campo">
-                    <asp:Label ID="LblNome" runat="server" Text=""></asp:Label>
-                </p>
+            <div class="titulo-perfil">
+                <h1>Meu Perfil</h1>
+                <p>Gerencie suas informações pessoais e sua conta.</p>
             </div>
 
-            <a class="link-editar" href="editar-nome.aspx">
-                Alterar nome
-            </a>
-        </div>
+            <div class="div-perfil">
+                <div class="info-perfil">
+                    <p class="nome-campo">Nome</p>
+                    <p class="valor-campo">
+                        <asp:Label ID="LblNome" runat="server" Text=""></asp:Label>
+                    </p>
+                </div>
 
-        <div class="div-perfil">
-            <div class="info-perfil">
-                <p class="nome-campo">E-mail</p>
-                <p class="valor-campo">
-                    <asp:Label ID="LblEmail" runat="server" Text=""></asp:Label>
-                </p>
+                <a class="link-editar" href="editar-nome.aspx">
+                    Alterar nome
+                </a>
             </div>
 
-            <a class="link-editar" href="editar-email.aspx">
-                Alterar e-mail
-            </a>
-        </div>
+            <div class="div-perfil">
+                <div class="info-perfil">
+                    <p class="nome-campo">E-mail</p>
+                    <p class="valor-campo">
+                        <asp:Label ID="LblEmail" runat="server" Text=""></asp:Label>
+                    </p>
+                </div>
 
-        <div class="div-perfil">
-            <div class="info-perfil">
-                <p class="nome-campo">Senha</p>
-                <p class="valor-campo">••••••••</p>
+                <a class="link-editar" href="editar-email.aspx">
+                    Alterar e-mail
+                </a>
             </div>
 
-            <a class="link-editar" href="editar-senha.aspx">
-                Alterar senha
-            </a>
-        </div>
+            <div class="div-perfil">
+                <div class="info-perfil">
+                    <p class="nome-campo">Senha</p>
+                    <p class="valor-campo">••••••••</p>
+                </div>
 
-        <div class="acoes-perfil">
-            <button class="botao-sair" id="sair" type="button">
-                Sair da conta
-            </button>
+                <a class="link-editar" href="editar-senha.aspx">
+                    Alterar senha
+                </a>
+            </div>
+            <form id="formn" runat="server">
+                <div class="acoes-perfil">
+                    <asp:Button ID="BtnSair" runat="server" Text="Sair da conta" CssClass="botao-sair" OnClick="BtnSair_Click" />
+                    <asp:Button ID="BtnExcluir" runat="server" Text="Excluir conta" CssClass="botao-excluir" OnClick="BtnExcluir_Click" />
+                </div>
+            </form>
+        </main>
 
-            <button class="botao-excluir" id="excluir" type="button">
-                Excluir conta
-            </button>
-        </div>
-
-    </main>
-
+    
 </body>
 </html>

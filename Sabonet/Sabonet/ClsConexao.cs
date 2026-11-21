@@ -154,5 +154,17 @@ namespace Sabonet
             Desconectar();
             return retorno;
         }
+
+        public void Excluir(int id)
+        {
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
+            comando.CommandText = @"DELETE FROM Usuario WHERE id_usu = @varId";
+            comando.Connection = conexao;
+            comando.ExecuteNonQuery();
+            Desconectar();
+        }
     }
 }
