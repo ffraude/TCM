@@ -71,6 +71,7 @@
     <Content Include="introducao.aspx" />
     <Content Include="login.aspx" />
     <Content Include="pagina-inicial.aspx" />
+    <Content Include="perfil.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="sobre.aspx" />
     <Content Include="StyleSheet1.css" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="pagina-inicial.aspx.designer.cs">
       <DependentUpon>pagina-inicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfil.aspx.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfil.aspx.designer.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signup.aspx.cs">

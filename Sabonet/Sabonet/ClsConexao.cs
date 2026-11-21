@@ -113,6 +113,24 @@ namespace Sabonet
             return retorno;
         }
 
+        public string getEmailUsuario(int id)
+        {
+            string retorno = "";
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
+            comando.CommandText = @"SELECT email_usu FROM Usuario WHERE id_usu = @varId";
+            SqlDataReader dr = comando.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                retorno = dr["email_usu"].ToString();
+            }
+            Desconectar();
+            return retorno;
+        }
+
         public int Entrar()
         {
             int retorno = 0;

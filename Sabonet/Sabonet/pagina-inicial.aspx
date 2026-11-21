@@ -17,7 +17,7 @@
             <a href="#">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>
-            <a href="#"><asp:Label ID="LblConta" runat="server" Text=""></asp:Label></a>
+            <a href="perfil.aspx"><asp:Label ID="LblConta" runat="server" Text=""></asp:Label></a>
         </nav>
     </header>
 
