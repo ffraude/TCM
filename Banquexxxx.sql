@@ -83,12 +83,16 @@ CREATE TABLE ItemPedido(
         REFERENCES Pedido(id_pedido)
 )
 
-CREATE PROCEDURE AlterarNomeUsuario
+drop procedure AterarNomexxxx
+
+CREATE PROCEDURE AterarNomexxxx
     @id_usu INT,
     @senha_atual VARCHAR(50),
     @novo_nome VARCHAR(50)
 AS
 BEGIN
+    SET NOCOUNT ON;
+
     IF EXISTS (
         SELECT 1
         FROM Usuario
@@ -99,10 +103,66 @@ BEGIN
         UPDATE Usuario
         SET nome_usu = @novo_nome
         WHERE id_usu = @id_usu;
+
+        RETURN 1;
     END
+
+    RETURN 0;
 END
 GO
-    
+
+CREATE PROCEDURE AlterarEmailexxxx
+    @id_usu INT,
+    @senha_atual VARCHAR(50),
+    @novo_email VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE id_usu = @id_usu
+        AND senha_usu = @senha_atual
+    )
+    BEGIN
+        UPDATE Usuario
+        SET email_usu = @novo_email
+        WHERE id_usu = @id_usu;
+
+        RETURN 1;
+    END
+
+    RETURN 0;
+END
+
+CREATE PROCEDURE AlterarSenhexxxx
+    @id_usu INT,
+    @senha_atual VARCHAR(50),
+    @senhexxxx VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE id_usu = @id_usu
+        AND senha_usu = @senha_atual
+    )
+    BEGIN
+        UPDATE Usuario
+        SET senha_usu = @senhexxxx
+        WHERE id_usu = @id_usu;
+
+        RETURN 1;
+    END
+
+    RETURN 0;
+END
+
 --Administrador
+
+select * from Usuario
 
 insert into Usuario (nome_usu, email_usu, senha_usu, acesso_usu) values ('Luiz Bombom Ricardo', 'luiz.bombom@gmail.com', 'Senhex_Fortex', 1)
