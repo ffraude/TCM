@@ -13,7 +13,7 @@
         <a href="pagina-inicial.aspx">Sabo.net</a>
 
         <nav>
-            <a href="#">Loja</a>
+            <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>
             <a href="introducao.aspx" id="linkConta" runat="server"><asp:Label ID="LblConta" runat="server" Text="Entrar"></asp:Label></a>

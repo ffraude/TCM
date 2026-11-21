@@ -11,7 +11,24 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClsConexao conexao = new ClsConexao();
+            if (Session["idUsuario"] != null || Convert.ToInt16(Session["idUsuario"]) != 0)
+            {
+                try
+                {
+                    LblConta.Text = Session["Nome"].ToString();
+                }
+                catch
+                {
+                    LblConta.Text = "bomboclaat";
+                }
+                linkConta.HRef = "perfil.aspx";
+            }
+            else
+            {
+                LblConta.Text = "Entrar";
+                linkConta.HRef = "introducao.aspx";
+            }
         }
 
         protected void AdicionarCarrinho_Command(object sender, CommandEventArgs e)
@@ -95,6 +112,11 @@ namespace Sabonet
             }
 
             lblQuantidade.Text = quantidade.ToString();
+        }
+
+        protected void btnMais2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

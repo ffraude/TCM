@@ -1,4 +1,5 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,141 +8,211 @@
 
 body {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(135deg, #e5e5e5 50%, #e979e3 100%);
 }
 
+/* CABEÇALHO */
 header {
     position: absolute;
-    top: 0px;
+    top: 0;
     width: 100%;
     height: 12vh;
     background: #2e4981;
     color: antiquewhite;
     display: flex;
-    text-align: center;
     align-items: center;
-    flex: 95%;
     justify-content: space-between;
+    padding: 0 40px;
 }
 
     header a {
         text-decoration: none;
         color: antiquewhite;
+    }
+
+    header > a {
         font-size: 3rem;
         font-weight: bold;
-        margin-left: 20px;
-        color: antiquewhite;
-        display: flex;
+    }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+    nav a, #LblConta {
+        font-size: 1.1rem;
+        font-weight: 600;
     }
 
-        header a.aiai {
-            padding: 3px 1px;
-            border-radius: 5px;
-            transition: 0.4s;
-            margin-right: 20px;
+    nav a {
+        transition: 0.3s;
+    }
+
+        nav a:hover {
+            transform: translateY(-2px);
+            color: #87C5E5;
         }
 
-            header a.aiai:hover {
-                background-color: #86c7f0;
-                transform: translateY(-1px);
-            }
+    nav .aiai img {
+        display: block;
+        object-fit: contain;
+    }
 
-h2 {
-    color: #000000;
-    align-self: center;
-}
+/* FORMULÁRIO */
 
 #form1 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16vh 30px 40px;
     display: flex;
-    padding: 40px;
-    background: #b3f5f0;
-    border-radius: 8px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+    justify-content: center;
+    align-items: flex-start;
 }
 
-    #form1 p {
-        color: #000000;
-        font-weight: 600;
-        font-size: 20px;
-        margin-top: 20px;
-    }
+/* PRODUTOS */
 
 .cu {
+    width: 100%;
+    max-width: 1500px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
 }
 
-    .cu .image {
-        width: 200px;
-        height: 200px;
-        transition: transform 0.3s ease;
-        margin-top: 15px;
-    }
-
-        .cu .image:hover {
-            transform: scale(1.1);
-        }
-
-    .cu div {
+    .cu .produto {
+        width: 250px;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         text-align: center;
-        width: 300px;
-        padding: 10px;
-        margin: 10px;
+        padding: 20px;
         background-color: white;
-        border-radius: 30px;
+        border-radius: 20px;
+        gap: 15px;
     }
 
-    .cu .button {
-        width: 100%;
-        padding: 14px;
-        border: none;
-        border-radius: 9px;
-        background: #ADD8F0;
-        color: #34566B;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-        margin: 5px;
-    }
-
-        .cu .button:hover {
-            background: #87C5E5;
-            transform: translateY(-2px);
-        }
-
-.produto {
+.produto h2 {
+    color: #000;
+    font-size: 19px;
+    min-height: 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
+.produto p {
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* IMAGENS */
+
+.cu .image {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+    .cu .image:hover {
+        transform: scale(1.1);
+    }
+
+/* QUANTIDADE */
 
 div.qtt {
     display: flex;
-    width: 200px;
+    align-items: center;
     justify-content: space-around;
+    width: 180px;
+    height: 40px;
     background-color: #d2d6d9;
+    border-radius: 9px;
 }
 
-.btncarro {
-    width: 50px;
+.qtt span {
+    font-weight: bold;
+}
+
+/* BOTÕES */
+
+.cu .button {
+    width: 100%;
+    padding: 12px 5px;
     border: none;
     border-radius: 9px;
     background: #ADD8F0;
     color: #34566B;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-@media (max-width: 450px) {
+    .cu .button:hover {
+        background: #87C5E5;
+        transform: translateY(-2px);
+    }
+
+.btncarro {
+    width: 40px;
+    height: 35px;
+    border: none;
+    border-radius: 9px;
+    background: #ADD8F0;
+    color: #34566B;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btncarro:hover {
+        background: #87C5E5;
+    }
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .cu {
+        gap: 15px;
+    }
+
+        .cu .produto {
+            width: 220px;
+        }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0 10px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+        nav a, #LblConta {
+            font-size: 0.85rem;
+        }
+
+        nav .aiai img {
+            width: 45px;
+            height: 40px;
+        }
+
     #form1 {
-        width: 90%;
-        padding: 25px;
+        padding: 100px 15px 30px;
+    }
+
+    .cu .produto {
+        width: 100%;
+        max-width: 300px;
     }
 }

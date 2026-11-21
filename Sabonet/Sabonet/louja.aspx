@@ -11,7 +11,14 @@
 <body>
     <header runat="server">
         <a href="pagina-inicial.aspx">Sabo.net</a>
-        <a href="carrinho.aspx" class="aiai"><img src="imgexxxx/carro_fofinho.png" alt="Logo" width="70" height="50"></a>
+        <nav>
+            <a href="louja.aspx">Loja</a>
+            <a href="sobre.aspx">Sobre nós</a>
+            <a href="#">Contato</a>
+            <a href="perfil.aspx" id="linkConta" runat="server"><asp:Label ID="LblConta" runat="server" Text="Entrar"></asp:Label></a>
+            <a href="carrinho.aspx" class="aiai"><img src="imgexxxx/carro_fofinho.png" alt="Logo" width="70" height="50"></a>
+
+        </nav>
     </header>
     <form id="form1" runat="server">
         <div class="cu">
@@ -33,7 +40,7 @@
                 <div class="qtt">
                     <asp:Button ID="btnMenos2" OnCommand="AlterarQuantidade_Command" CommandName="Menos" CommandArgument="2" runat="server" Text="-" CssClass="btncarro"/>
                     <asp:Label ID="lblQuantidade2" runat="server" Text="1"></asp:Label>
-                    <asp:Button ID="btnMais2" OnCommand="AlterarQuantidade_Command" CommandName="Mais" CommandArgument="2" runat="server" Text="+" CssClass="btncarro"/>
+                    <asp:Button ID="btnMais2" OnCommand="AlterarQuantidade_Command" CommandName="Mais" CommandArgument="2" runat="server" Text="+" CssClass="btncarro" OnClick="btnMais2_Click"/>
                 </div>
                 <asp:Button ID="btnAdd2" runat="server" Text="adicionar ao carrinho" CommandArgument="2" OnCommand="AdicionarCarrinho_Command" CssClass="button"/>
             </div>
