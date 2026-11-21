@@ -44,7 +44,7 @@ namespace Sabonet
         {
             Session["idUsuario"] = 0;
             Session["Nome"] = "";
-            Response.Redirect("introducao.aspx");
+            Response.Redirect("pagina-inicial.aspx");
         }
 
         protected void BtnExcluir_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Sabonet
             conexao.Excluir(id);
             Session["idUsuario"] = 0;
             Session["Nome"] = "";
-            Response.Redirect("introducao.aspx");
+            Response.Redirect("pagina-inicial.aspx");
         }
     }
 }

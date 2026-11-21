@@ -11,19 +11,25 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(Session["idUsuario"]) == null || Convert.ToInt16(Session["idUsuario"]) == 0)
+            ClsConexao conexao = new ClsConexao();
+            if (Convert.ToInt16(Session["idUsuario"]) != null || Convert.ToInt16(Session["idUsuario"]) != 0)
             {
-                Response.Redirect("introducao.aspx");
+                try
+                {
+                    LblConta.Text = Session["Nome"].ToString();
+                }
+                catch
+                {
+                    LblConta.Text = "bomboclaat";
+                }
+                linkConta.HRef = "perfil.aspx";
+            }
+            else
+            {
+                LblConta.Text = "Entrar";
+                linkConta.HRef = "introducao.aspx";
             }
 
-            try
-            {
-                LblConta.Text = Session["Nome"].ToString();
-            }
-            catch
-            {
-                LblConta.Text = "bomboclaat";
-            }
         }
     }
 }

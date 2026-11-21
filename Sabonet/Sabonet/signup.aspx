@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <a href="introducao.aspx">Sabo.net</a>
+        <a href="pagina-inicial.aspx">Sabo.net</a>
     </header>
     <form id="form1" runat="server">
         <h2>Cadastrar na Sabo.net</h2>
