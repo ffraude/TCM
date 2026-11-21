@@ -83,6 +83,26 @@ CREATE TABLE ItemPedido(
         REFERENCES Pedido(id_pedido)
 )
 
+CREATE PROCEDURE AlterarNomeUsuario
+    @id_usu INT,
+    @senha_atual VARCHAR(50),
+    @novo_nome VARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE id_usu = @id_usu
+        AND senha_usu = @senha_atual
+    )
+    BEGIN
+        UPDATE Usuario
+        SET nome_usu = @novo_nome
+        WHERE id_usu = @id_usu;
+    END
+END
+GO
+    
 --Administrador
 
 insert into Usuario (nome_usu, email_usu, senha_usu, acesso_usu) values ('Luiz Bombom Ricardo', 'luiz.bombom@gmail.com', 'Senhex_Fortex', 1)

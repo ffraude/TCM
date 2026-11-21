@@ -1,9 +1,11 @@
 ﻿
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }
 
 body {
@@ -47,10 +49,16 @@ nav {
     gap: 30px;
 }
 
-    nav a {
+    nav a, #LblConta{
         font-size: 1.1rem;
         font-weight: 600;
     }
+
+        nav a:hover, #LblConta {
+            transform: translateY(-2px);
+            transition: 0.3s;
+            color: #87C5E5;
+        }
 
 /* CONTEÚDO PRINCIPAL */
 
@@ -187,37 +195,154 @@ h2 {
         margin-top: 20px;
     }
 
+
+
+/* PERFIL */
+
+.sect-perfil {
+    width: 65%;
+    max-width: 850px;
+    min-height: 60vh;
+    background: #ADD8F0;
+    border: solid 3px #91bfdb;
+    border-radius: 15px;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(46, 73, 129, 0.15);
+    margin-top: 10vh;
+}
+
+/* TÍTULO */
+
+.titulo-perfil {
+    text-align: center;
+    padding: 10px 0 25px;
+}
+
+    .titulo-perfil h1 {
+        color: #2e4981;
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .titulo-perfil p {
+        color: #34566B;
+        font-size: 14px;
+    }
+
+/* INFORMAÇÕES */
+
+.div-perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 90px;
+    width: 100%;
+    align-self: stretch;
+    flex-shrink: 0;
+    border-top: solid 1px #91bfdb;
+    gap: 15px;
+}
+.info-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nome-campo {
+    color: #34566B;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.valor-campo {
+    color: #2e4981;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* LINKS DE EDIÇÃO */
+
+.link-editar {
+    text-decoration: none;
+    color: #2e4981;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: 2px solid #2e4981;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .link-editar:hover {
+        background: #2e4981;
+        color: antiquewhite;
+    }
+
+/* BOTÕES DE AÇÃO */
+
+.acoes-perfil {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 25px;
+    margin-top: 10px;
+    border-top: solid 1px #91bfdb;
+}
+
+.botao-sair,
+.botao-excluir {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-sair {
+    background: #ef4f4f;
+    color: white;
+}
+
+    .botao-sair:hover {
+        background: #bf3b3b;
+        transform: translateY(-2px);
+    }
+
+.botao-excluir {
+    background: #ee1111;
+    color: white;
+}
+
+    .botao-excluir:hover {
+        background: #b51010;
+        transform: translateY(-2px);
+    }
+    
 /* RESPONSIVIDADE */
 
-@media (max-width: 600px) {
-    header {
-        padding: 0 15px;
-    }
-
-        header > a {
-            font-size: 2rem;
-        }
-
-    nav {
-        gap: 10px;
-    }
-
-        nav a {
-            font-size: 0.8rem;
-        }
-
-    .boas-vindas h1 {
-        font-size: 2rem;
-    }
-
-    .boas-vindas p {
-        font-size: 1rem;
-    }
+.confirmar:hover {
+    background: #20365f;
 }
 
-@media (max-width: 450px) {
-    #form1 {
-        width: 90%;
-        padding: 25px;
-    }
+.excluir-confirmar {
+    background: #ee1111;
 }
+
+    .excluir-confirmar:hover {
+        background: #b51010;
+    }
+
+.cancelar {
+    background: #e5e5e5;
+    color: #34566B;
+}
+
+    .cancelar:hover {
+        background: #c9c9c9;
+    }

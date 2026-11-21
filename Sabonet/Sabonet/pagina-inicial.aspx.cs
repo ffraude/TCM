@@ -11,16 +11,21 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(Session["idUsuario"]) == null || Convert.ToInt16(Session["idUsuario"]) == 0)
-            {
-                Response.Redirect("introducao.aspx");
-            }
             ClsConexao conexao = new ClsConexao();
             int id = Convert.ToInt16(Session["idUsuario"]);
             string resultadoQuery = conexao.getNomeUsuario(id);
             Session["Nome"] = resultadoQuery;
-            LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net, " + resultadoQuery + "!";
-            LblConta.Text = resultadoQuery;
+            if (Session["idUsuario"] != null || Convert.ToInt16(Session["idUsuario"]) != 0)
+            {
+                LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net, " + resultadoQuery + "!";
+                LblConta.Text = resultadoQuery;
+                linkConta.HRef = "perfil.aspx";
+            } else
+            {
+                LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net!";
+                LblConta.Text = "Entrar";
+                linkConta.HRef = "introducao.aspx";
+            }
         }
     }
 }

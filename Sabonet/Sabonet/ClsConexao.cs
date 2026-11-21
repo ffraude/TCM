@@ -113,6 +113,24 @@ namespace Sabonet
             return retorno;
         }
 
+        public string getEmailUsuario(int id)
+        {
+            string retorno = "";
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
+            comando.CommandText = @"SELECT email_usu FROM Usuario WHERE id_usu = @varId";
+            SqlDataReader dr = comando.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                retorno = dr["email_usu"].ToString();
+            }
+            Desconectar();
+            return retorno;
+        }
+
         public int Entrar()
         {
             int retorno = 0;
@@ -137,6 +155,17 @@ namespace Sabonet
             return retorno;
         }
 
+        public void Excluir(int id)
+        {
+            Conectar();
+            comando.Connection = conexao;
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@varId", SqlDbType.Int).Value = id;
+            comando.CommandText = @"DELETE FROM Usuario WHERE id_usu = @varId";
+            comando.Connection = conexao;
+            comando.ExecuteNonQuery();
+            Desconectar();
+        }
         public ClsItemCarrinho ConsultarProduto(int idProduto)
         {
             ClsItemCarrinho item = null;
