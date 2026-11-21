@@ -67,10 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgexxxx\Bonzi_buddy.png" />
     <Content Include="introducao.aspx" />
     <Content Include="login.aspx" />
     <Content Include="pagina-inicial.aspx" />
     <Content Include="signup.aspx" />
+    <Content Include="sobre.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -104,6 +106,13 @@
     </Compile>
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

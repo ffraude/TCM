@@ -19,24 +19,30 @@ namespace Sabonet
             TxtMail.Text = "";
             TxtSenha.Text = "";
             TxtUsu.Text = "";
-            LblAlerta.Text = "";
         }
 
         protected void BtnEntrar_Click(object sender, EventArgs e)
         {
+            LblAlerta.Text = "";
             ClsConexao conexao = new ClsConexao();
             if (TxtMail.Text != "" && TxtSenha.Text != "" && TxtUsu.Text != "")
             {
                 conexao.Email = TxtMail.Text;
                 conexao.Senha = TxtSenha.Text;
                 conexao.Nome = TxtUsu.Text;
-                conexao.Gravar();
+                LblAlerta.Text = conexao.ConferirEmail();
+                if (LblAlerta.Text.Equals(""))
+                {
+                    conexao.Gravar();
+                    Response.Redirect("introducao.aspx");
+                }
             }
             else
             {
                 LblAlerta.Text = "Preencha os campos corretamente.";
             }
             limparCampos();
+            
         }
     }
 }
