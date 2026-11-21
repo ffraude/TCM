@@ -12,7 +12,7 @@ namespace Sabonet
         //String de conexão GENÉRICA, lembra de mudar quando você abrir o banco na escola!!!!
         //String de conexão do notebook do Máximo: DESKBOTTOM\SQLEXPRESS
         private string strConexao =
-            @"Data Source=DESKBOTTOM\SQLEXPRESS;
+            @"Data Source=JJe;
               Initial Catalog=DBresenhexxxx;
               Integrated Security=True;";
 
@@ -136,5 +136,43 @@ namespace Sabonet
             Desconectar();
             return retorno;
         }
+
+        public ClsItemCarrinho ConsultarProduto(int idProduto)
+        {
+            ClsItemCarrinho item = null;
+
+            Conectar();
+
+            try
+            {
+                using (SqlCommand comandoProduto = new SqlCommand("spConsultarProduto", conexao))
+                {
+                    comandoProduto.CommandType = CommandType.StoredProcedure;
+
+                    comandoProduto.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+
+                    SqlDataReader dr = comandoProduto.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        item = new ClsItemCarrinho();
+
+                        item.IdProduto = Convert.ToInt32(dr["id_prod"]);
+                        item.NomeProduto = dr["nome_prod"].ToString();
+                        item.Preco = Convert.ToDecimal(dr["preco"]);
+                        item.Estoque = Convert.ToInt32(dr["estoque"]);
+                    }
+
+                    dr.Close();
+                }
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return item;
+        }
+
     }
 }

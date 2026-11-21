@@ -1,0 +1,147 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e5e5e5 50%, #e979e3 100%);
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 12vh;
+    background: #2e4981;
+    color: antiquewhite;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex: 95%;
+    justify-content: space-between;
+}
+
+    header a {
+        text-decoration: none;
+        color: antiquewhite;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-left: 20px;
+        color: antiquewhite;
+        display: flex;
+    }
+
+        header a.aiai {
+            padding: 3px 1px;
+            border-radius: 5px;
+            transition: 0.4s;
+            margin-right: 20px;
+        }
+
+            header a.aiai:hover {
+                background-color: #86c7f0;
+                transform: translateY(-1px);
+            }
+
+h2 {
+    color: #000000;
+    align-self: center;
+}
+
+#form1 {
+    display: flex;
+    padding: 40px;
+    background: #b3f5f0;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+    #form1 p {
+        color: #000000;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+.cu {
+    display: flex;
+    flex-direction: row;
+}
+
+    .cu .image {
+        width: 200px;
+        height: 200px;
+        transition: transform 0.3s ease;
+        margin-top: 15px;
+    }
+
+        .cu .image:hover {
+            transform: scale(1.1);
+        }
+
+    .cu div {
+        text-align: center;
+        width: 300px;
+        padding: 10px;
+        margin: 10px;
+        background-color: white;
+        border-radius: 30px;
+    }
+
+    .cu .button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 9px;
+        background: #ADD8F0;
+        color: #34566B;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 5px;
+    }
+
+        .cu .button:hover {
+            background: #87C5E5;
+            transform: translateY(-2px);
+        }
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+div.qtt {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    background-color: #d2d6d9;
+}
+
+.btncarro {
+    width: 50px;
+    border: none;
+    border-radius: 9px;
+    background: #ADD8F0;
+    color: #34566B;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 450px) {
+    #form1 {
+        width: 90%;
+        padding: 25px;
+    }
+}
