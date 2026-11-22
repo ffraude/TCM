@@ -24,22 +24,24 @@
         <span class="bolha"></span>
         <span class="bolha"></span>
     </div>
-
+    
     <header>
+        
         <a href="pagina-inicial.aspx">Sabo.net</a>
-
+        <form id="formn" runat="server">
         <nav>
+            <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>
             <a href="perfil.aspx" id="linkConta" runat="server"><asp:Label ID="LblConta" runat="server" Text="Entrar"></asp:Label></a>
-        </nav>
+        </nav></form>  
     </header>
     <div class="bonzi"></div>
     <div class="textex">
         <p>Desenvolvido por Pedro Máximo de Souza e José Everardo da Silva Júnior, este site é o maior, melhor, primeiro, único e 
             provavelmente último TCM do segundo ano de DS sobre sabão. Espero que gostem do nosso trabalho!
         </p>
-    </div>
+    </div> 
 </body>
 </html>

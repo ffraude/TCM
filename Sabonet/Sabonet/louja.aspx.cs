@@ -12,6 +12,16 @@ namespace Sabonet
         protected void Page_Load(object sender, EventArgs e)
         {
             ClsConexao conexao = new ClsConexao();
+            if (Session["idUsuario"] != null && Convert.ToInt16(Session["idUsuario"]) != 0)
+            {
+                int id = Convert.ToInt16(Session["idUsuario"]);
+                Session["acesso"] = conexao.ConsultarAcesso(id);
+                if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+                }
+            }
+
             if (Session["idUsuario"] != null || Convert.ToInt16(Session["idUsuario"]) != 0)
             {
                 try

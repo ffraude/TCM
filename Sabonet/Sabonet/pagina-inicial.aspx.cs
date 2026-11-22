@@ -14,12 +14,18 @@ namespace Sabonet
             ClsConexao conexao = new ClsConexao();
             int id = Convert.ToInt16(Session["idUsuario"]);
             string resultadoQuery = conexao.getNomeUsuario(id);
+            
             Session["Nome"] = resultadoQuery;
             if (Session["idUsuario"] != null && Convert.ToInt16(Session["idUsuario"]) != 0 && Session["Nome"] != null && !Session["Nome"].ToString().Equals(""))
             {
                 LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net, " + resultadoQuery + "!";
                 LblConta.Text = resultadoQuery;
                 linkConta.HRef = "perfil.aspx";
+                Session["acesso"] = conexao.ConsultarAcesso(id);
+                if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+                }
             } else
             {
                 LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net!";

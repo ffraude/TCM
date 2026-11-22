@@ -12,8 +12,15 @@ namespace Sabonet
         protected void Page_Load(object sender, EventArgs e)
         {
             ClsConexao conexao = new ClsConexao();
-            if (Convert.ToInt16(Session["idUsuario"]) != null || Convert.ToInt16(Session["idUsuario"]) != 0)
+            int id;
+            if (Session["idUsuario"] != null && int.TryParse(Session["idUsuario"].ToString(), out id) && id != 0)
             {
+                Session["acesso"] = conexao.ConsultarAcesso(id);
+                if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+                }
+
                 try
                 {
                     LblConta.Text = Session["Nome"].ToString();

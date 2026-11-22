@@ -23,11 +23,11 @@
         <span class="bolha"></span>
         <span class="bolha"></span>
     </div>
-
-        <header>
-        <a href="pagina-inicial.aspx">Sabo.net</a>
-
+    <form id="formn" runat="server">
+    <header>
+        
         <nav>
+            <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>
@@ -39,7 +39,6 @@
                 <h1>Editar Senha</h1>
                 <p>senhexxxx</p>
             </div>
-            <form id="formn" runat="server">
         <div class="div-perfil">
             <p>Novo endereço de email:</p>
             <p><asp:TextBox ID="TxtUsu" runat="server"></asp:TextBox></p>
@@ -53,7 +52,8 @@
                 <p><asp:Label ID="LblAlerta" runat="server" Text=""></asp:Label></p>
                 <p><asp:Button ID="BtnSalvar" runat="server" Text="Salvar Alterações" CssClass="botao-excluir" OnClick="BtnSalvar_Click"/></p>
             </div>
-                        </form>
+                        
         </section>
+    </form>
 </body>
 </html>

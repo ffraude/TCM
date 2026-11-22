@@ -26,6 +26,13 @@ namespace Sabonet
                 Response.Redirect("introducao.aspx");
             }
 
+            ClsConexao conexao = new ClsConexao();
+            Session["acesso"] = conexao.ConsultarAcesso(id);
+            if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+            }
+
             try
             {
                 LblConta.Text = Session["Nome"].ToString();

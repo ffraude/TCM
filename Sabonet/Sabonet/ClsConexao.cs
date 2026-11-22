@@ -13,7 +13,7 @@ namespace Sabonet
         //String de conexão GENÉRICA, lembra de mudar quando você abrir o banco na escola!!!!
         //String de conexão do notebook do Máximo: DESKBOTTOM\SQLEXPRESS
         private string strConexao =
-            @"Data Source=JJe;
+            @"Data Source=DESKBOTTOM\SQLEXPRESS;
               Initial Catalog=DBresenhexxxx;
               Integrated Security=True;";
 
@@ -637,6 +637,24 @@ namespace Sabonet
                 if (conexao.State == ConnectionState.Open)
                     conexao.Close();
             }
+        }
+
+        public Boolean ConsultarAcesso(int id)
+        {
+            comando.Connection = conexao;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "spConsultarAcesso";
+
+            comando.Parameters.Clear();
+            comando.Parameters.Add("@id_usu", SqlDbType.Int).Value = id;
+
+            conexao.Open();
+
+            bool acesso = Convert.ToBoolean(comando.ExecuteScalar());
+
+            conexao.Close();
+
+            return acesso;
         }
     }
 }

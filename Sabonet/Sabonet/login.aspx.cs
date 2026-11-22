@@ -11,6 +11,10 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+            }
 
         }
 

@@ -49,6 +49,7 @@
         <a href="pagina-inicial.aspx">Sabo.net</a>
 
         <nav>
+            <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>

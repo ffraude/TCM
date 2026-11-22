@@ -7,6 +7,7 @@
     <meta charset="utf-8"/>
     <title>Meu Carrinho</title>
     <link rel="stylesheet" href="carrinho.css" />
+    <link rel="stylesheet" href="StyleSheet1.css" />
     <link href="bolhas.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
@@ -23,6 +24,18 @@
         <span class="bolha"></span>
         <span class="bolha"></span>
     </div>
+
+    <header>
+        <a href="pagina-inicial.aspx">Sabo.net</a>
+
+        <nav>
+            <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
+            <a href="louja.aspx">Loja</a>
+            <a href="sobre.aspx">Sobre nós</a>
+            <a href="#">Contato</a>
+            <a href="perfil.aspx" id="linkConta" runat="server">Entrar</a>
+        </nav>
+    </header>
 
     <form id="form1" runat="server">
 

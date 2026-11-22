@@ -23,10 +23,11 @@
         <span class="bolha"></span>
         <span class="bolha"></span>
     </div>
-
+    <form id="form1" runat="server">
     <header runat="server">
         <a href="pagina-inicial.aspx">Sabo.net</a>
         <nav>
+            <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="">Contato</a>
@@ -35,7 +36,6 @@
 
         </nav>
     </header>
-    <form id="form1" runat="server">
         <div class="cu">
             <div class="produto">
                 <h2>Eudora Frutas Vermelhas</h2>

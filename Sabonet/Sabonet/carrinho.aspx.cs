@@ -9,6 +9,17 @@ namespace Sabonet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["idUsuario"] != null)
+            {
+                int id = Convert.ToInt32(Session["idUsuario"]);
+                ClsConexao conexao = new ClsConexao();
+                Session["acesso"] = conexao.ConsultarAcesso(id);
+                if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+                }
+            }
+
             if (!IsPostBack)
             {
                 AtualizarCarrinho();

@@ -31,6 +31,9 @@
         <a href="pagina-inicial.aspx">Sabo.net</a>
 
         <nav>
+            <form id="formn" runat="server">
+                <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
+            </form>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
             <a href="#">Contato</a>

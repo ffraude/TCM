@@ -29,6 +29,12 @@ namespace Sabonet
             {
                 LblConta.Text = resultadoQuery;
                 linkConta.HRef = "perfil.aspx";
+
+                Session["acesso"] = conexao.ConsultarAcesso(id);
+                if (Session["acesso"] != null && Convert.ToBoolean(Session["acesso"]) == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "mostrarAdmin", "document.getElementById('linkAdmin').style.display = 'inline';", true);
+                }
             }
             else
             {
