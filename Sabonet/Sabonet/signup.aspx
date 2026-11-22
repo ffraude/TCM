@@ -7,8 +7,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cadastrar</title>
     <link href="StyleSheet1.css" type="text/css" rel="stylesheet"/>
+    <link href="bolhas.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+    <div class="bolhas bolhas-esq" aria-hidden="true">
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+    </div>
+
+    <div class="bolhas bolhas-dir" aria-hidden="true">
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+    </div>
+
         <header>
         <a href="pagina-inicial.aspx">Sabo.net</a>
 

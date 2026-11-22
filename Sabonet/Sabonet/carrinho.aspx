@@ -7,8 +7,23 @@
     <meta charset="utf-8"/>
     <title>Meu Carrinho</title>
     <link rel="stylesheet" href="carrinho.css" />
+    <link href="bolhas.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+    <div class="bolhas bolhas-esq" aria-hidden="true">
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+    </div>
+
+    <div class="bolhas bolhas-dir" aria-hidden="true">
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+        <span class="bolha"></span>
+    </div>
+
     <form id="form1" runat="server">
 
         <h1>Meu Carrinho</h1>

@@ -1,0 +1,228 @@
+﻿.bolhas {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 15vw;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bolhas-esq {
+    left: 0;
+}
+
+.bolhas-dir {
+    right: 0;
+}
+
+.bolha {
+    position: absolute;
+    bottom: -80px;
+    left: var(--x);
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(173, 216, 240, 0.35) 40%, rgba(233, 121, 227, 0.25) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.6), 0 0 6px rgba(135, 197, 229, 0.4);
+    opacity: 0;
+    animation: subir var(--dur) linear var(--atraso) infinite, balancar var(--balanco) ease-in-out var(--atraso) infinite alternate;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    85% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-115vh);
+        opacity: 0;
+    }
+}
+
+@keyframes balancar {
+    from {
+        margin-left: -12px;
+    }
+
+    to {
+        margin-left: 12px;
+    }
+}
+
+.bolhas-esq .bolha:nth-child(1) {
+    --tam: 14px;
+    --x: 10%;
+    --dur: 9s;
+    --atraso: -2s;
+    --balanco: 3s;
+}
+
+.bolhas-esq .bolha:nth-child(2) {
+    --tam: 32px;
+    --x: 55%;
+    --dur: 12s;
+    --atraso: -7s;
+    --balanco: 2.5s;
+}
+
+.bolhas-esq .bolha:nth-child(3) {
+    --tam: 20px;
+    --x: 30%;
+    --dur: 8s;
+    --atraso: -4s;
+    --balanco: 3.5s;
+}
+
+.bolhas-esq .bolha:nth-child(4) {
+    --tam: 40px;
+    --x: 75%;
+    --dur: 14s;
+    --atraso: -11s;
+    --balanco: 2s;
+}
+
+.bolhas-esq .bolha:nth-child(5) {
+    --tam: 12px;
+    --x: 45%;
+    --dur: 10s;
+    --atraso: -1s;
+    --balanco: 4s;
+}
+
+.bolhas-esq .bolha:nth-child(6) {
+    --tam: 28px;
+    --x: 15%;
+    --dur: 13s;
+    --atraso: -9s;
+    --balanco: 3s;
+}
+
+.bolhas-esq .bolha:nth-child(7) {
+    --tam: 36px;
+    --x: 65%;
+    --dur: 7s;
+    --atraso: -5s;
+    --balanco: 2.5s;
+}
+
+.bolhas-esq .bolha:nth-child(8) {
+    --tam: 18px;
+    --x: 25%;
+    --dur: 11s;
+    --atraso: -13s;
+    --balanco: 3.5s;
+}
+
+.bolhas-esq .bolha:nth-child(9) {
+    --tam: 24px;
+    --x: 80%;
+    --dur: 15s;
+    --atraso: -3s;
+    --balanco: 2s;
+}
+
+.bolhas-esq .bolha:nth-child(10) {
+    --tam: 44px;
+    --x: 40%;
+    --dur: 9s;
+    --atraso: -8s;
+    --balanco: 3s;
+}
+
+.bolhas-dir .bolha:nth-child(1) {
+    --tam: 30px;
+    --x: 60%;
+    --dur: 11s;
+    --atraso: -6s;
+    --balanco: 2.5s;
+}
+
+.bolhas-dir .bolha:nth-child(2) {
+    --tam: 16px;
+    --x: 20%;
+    --dur: 8s;
+    --atraso: -1s;
+    --balanco: 3s;
+}
+
+.bolhas-dir .bolha:nth-child(3) {
+    --tam: 38px;
+    --x: 75%;
+    --dur: 13s;
+    --atraso: -10s;
+    --balanco: 2s;
+}
+
+.bolhas-dir .bolha:nth-child(4) {
+    --tam: 22px;
+    --x: 35%;
+    --dur: 9s;
+    --atraso: -3s;
+    --balanco: 3.5s;
+}
+
+.bolhas-dir .bolha:nth-child(5) {
+    --tam: 12px;
+    --x: 10%;
+    --dur: 15s;
+    --atraso: -12s;
+    --balanco: 4s;
+}
+
+.bolhas-dir .bolha:nth-child(6) {
+    --tam: 42px;
+    --x: 50%;
+    --dur: 7s;
+    --atraso: -5s;
+    --balanco: 2.5s;
+}
+
+.bolhas-dir .bolha:nth-child(7) {
+    --tam: 26px;
+    --x: 25%;
+    --dur: 12s;
+    --atraso: -8s;
+    --balanco: 3s;
+}
+
+.bolhas-dir .bolha:nth-child(8) {
+    --tam: 34px;
+    --x: 70%;
+    --dur: 10s;
+    --atraso: -2s;
+    --balanco: 2s;
+}
+
+.bolhas-dir .bolha:nth-child(9) {
+    --tam: 18px;
+    --x: 40%;
+    --dur: 14s;
+    --atraso: -9s;
+    --balanco: 3.5s;
+}
+
+.bolhas-dir .bolha:nth-child(10) {
+    --tam: 28px;
+    --x: 15%;
+    --dur: 8s;
+    --atraso: -4s;
+    --balanco: 3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bolha {
+        animation: none;
+        opacity: 0;
+    }
+}

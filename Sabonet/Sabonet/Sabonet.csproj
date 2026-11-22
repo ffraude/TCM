@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bolhas.css" />
     <Content Include="editar-email.aspx" />
     <Content Include="editar-nome.aspx" />
     <Content Include="carrinho.aspx" />
