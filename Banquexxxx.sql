@@ -228,6 +228,12 @@ BEGIN
     WHERE Pedido.id_pedido = @idPedido;
 END;
 
+create procedure spConsultarAcesso
+	@id_usu int
+as
+begin
+	select acesso_usu from Usuario where(@id_usu = id_usu)
+end
 
 insert into Categoria(nome_cat, desc_cat) values
 ('sabonete em pedra', 'sabonetes em pedra para higiene'),
