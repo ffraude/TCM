@@ -64,6 +64,18 @@
                     Alterar senha
                 </a>
             </div>
+            <div class="div-perfil">
+    <div class="info-perfil">
+        <p class="nome-campo">Meus pedidos</p>
+        <p class="valor-campo">
+            Consulte suas compras e acompanhe os detalhes dos seus pedidos.
+        </p>
+    </div>
+
+    <a class="link-editar" href="meusPedidos.aspx">
+        Ver meus pedidos
+    </a>
+</div>
             <form id="formn" runat="server">
                 <div class="acoes-perfil">
                     <asp:Button ID="BtnSair" runat="server" Text="Sair da conta" CssClass="botao-sair" OnClick="BtnSair_Click" />

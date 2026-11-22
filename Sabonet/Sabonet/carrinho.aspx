@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="carrinho.css" />
 </head>
 <body>
+    <header>
+    <a href="pagina-inicial.aspx">Sabo.net</a>
+
+    <nav>
+        <a href="louja.aspx" class="btn-voltar-loja">Voltar para loja</a>
+    </nav>
+</header>
     <form id="form1" runat="server">
 
         <h1>Meu Carrinho</h1>
@@ -16,6 +23,7 @@
         <asp:GridView ID="gvCarrinho" runat="server"
             AutoGenerateColumns="False"
             EmptyDataText="Seu carrinho está vazio."
+            CssClass="tabela"
             OnRowCommand="gvCarrinho_RowCommand">
 
 
@@ -57,6 +65,32 @@
             <asp:Label ID="lblTotal" runat="server" Text="R$ 0,00"></asp:Label>
         </h2>
 
+        <h2>Endereço de entrega</h2>
+
+<div class="endereco">
+    <asp:Label runat="server" Text="CEP:" />
+    <asp:TextBox ID="txtCEP" runat="server" MaxLength="9" />
+
+    <asp:Label runat="server" Text="Número:" />
+    <asp:TextBox ID="txtNumero" runat="server" TextMode="Number" />
+
+    <asp:Label runat="server" Text="Complemento:" />
+    <asp:TextBox ID="txtComplemento" runat="server" />
+
+    <asp:Label runat="server" Text="Bairro:" />
+    <asp:TextBox ID="txtBairro" runat="server" />
+
+    <asp:Label runat="server" Text="Cidade:" />
+    <asp:TextBox ID="txtCidade" runat="server" />
+
+    <asp:Label runat="server" Text="Estado:" />
+    <asp:TextBox ID="txtEstado" runat="server" />
+
+    <asp:Button ID="btnFinalizar" runat="server"
+        Text="Finalizar compra"
+        OnClick="btnFinalizar_Click" />
+
+    <asp:Label ID="lblEnderecoAlerta" runat="server"></asp:Label>
     </form>
 </body>
 </html>
