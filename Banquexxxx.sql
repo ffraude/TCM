@@ -196,6 +196,38 @@ BEGIN
     ORDER BY Pedido.data_ped DESC;
 END;
 
+CREATE PROCEDURE spConsultarItensPedido
+    @idPedido INT
+AS
+BEGIN
+    SELECT
+        Produto.nome_prod,
+        ItemPedido.quant,
+        ItemPedido.preco_unitario,
+        (ItemPedido.quant * ItemPedido.preco_unitario) AS subtotal
+    FROM ItemPedido
+    INNER JOIN Produto
+        ON ItemPedido.id_prod = Produto.id_prod
+    WHERE ItemPedido.id_pedido = @idPedido;
+END;
+
+CREATE PROCEDURE spConsultarEnderecoPedido
+    @idPedido INT
+AS
+BEGIN
+    SELECT
+        Endereco.cep,
+        Endereco.numero,
+        Endereco.complemento,
+        Endereco.bairro,
+        Endereco.cidade,
+        Endereco.estado
+    FROM Pedido
+    INNER JOIN Endereco
+        ON Pedido.id_end = Endereco.id_end
+    WHERE Pedido.id_pedido = @idPedido;
+END;
+
 
 insert into Categoria(nome_cat, desc_cat) values
 ('sabonete em pedra', 'sabonetes em pedra para higiene'),
