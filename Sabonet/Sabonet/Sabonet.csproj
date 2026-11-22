@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bolhas.css" />
+    <Content Include="carrinho.css" />
     <Content Include="editar-email.aspx" />
     <Content Include="editar-nome.aspx" />
     <Content Include="carrinho.aspx" />
@@ -87,6 +88,8 @@
     <Content Include="login.aspx" />
     <Content Include="louja.aspx" />
     <Content Include="louja.css" />
+    <Content Include="meusPedidos.aspx" />
+    <Content Include="meusPedidos.css" />
     <Content Include="pagina-inicial.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="signup.aspx" />
@@ -146,6 +149,13 @@
     </Compile>
     <Compile Include="louja.aspx.designer.cs">
       <DependentUpon>louja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="meusPedidos.aspx.cs">
+      <DependentUpon>meusPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="meusPedidos.aspx.designer.cs">
+      <DependentUpon>meusPedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="pagina-inicial.aspx.cs">
       <DependentUpon>pagina-inicial.aspx</DependentUpon>

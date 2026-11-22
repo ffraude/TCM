@@ -1,0 +1,242 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e5e5e5 50%, #e979e3 100%);
+}
+
+/* CABEÇALHO */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 12vh;
+    background: #2e4981;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+    header a {
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    header > a {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+    nav a, #LblConta {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    nav a {
+        transition: 0.3s;
+    }
+
+        nav a:hover {
+            transform: translateY(-2px);
+            color: #87C5E5;
+        }
+
+    nav .btn-voltar {
+        background: #ADD8F0;
+        color: #34566B;
+        padding: 10px 22px;
+        border-radius: 9px;
+        transition: 0.3s;
+    }
+
+        nav .btn-voltar:hover {
+            background: #87C5E5;
+            color: #34566B;
+        }
+
+/* CONTEÚDO */
+#form1 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16vh 30px 40px;
+}
+
+.conteudo {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* SEÇÕES */
+.pedidos, .detalhes {
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* TÍTULOS */
+h1 {
+    font-size: 30px;
+    color: #2e4981;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 25px;
+    color: #2e4981;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 19px;
+    color: #34566B;
+    margin-bottom: 15px;
+}
+
+/* TABELAS */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: #333;
+}
+
+    .tabela th {
+        background: #2e4981;
+        color: antiquewhite;
+        padding: 15px 10px;
+        font-size: 15px;
+    }
+
+    .tabela td {
+        padding: 14px 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tabela tr:nth-child(even) {
+        background: #f2f5f8;
+    }
+
+    .tabela tr:hover {
+        background: #e8f4fb;
+    }
+
+/* BOTÃO DE DETALHES */
+.btn-detalhes {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 9px;
+    background: #ADD8F0;
+    color: #34566B;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn-detalhes:hover {
+        background: #87C5E5;
+        transform: translateY(-2px);
+    }
+
+/* ENDEREÇO */
+.endereco {
+    background: #f2f5f8;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* PEDIDO SELECIONADO */
+.pedido-selecionado {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #34566B;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVIDADE - TABLETS */
+@media (max-width: 900px) {
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+        nav a, #LblConta {
+            font-size: 0.95rem;
+        }
+
+    .pedidos, .detalhes {
+        padding: 20px;
+        overflow-x: auto;
+    }
+}
+
+/* RESPONSIVIDADE - CELULARES */
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        min-height: 100px;
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+        header > a {
+            font-size: 2rem;
+        }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+        nav a, #LblConta {
+            font-size: 0.85rem;
+        }
+
+    #form1 {
+        padding: 140px 12px 25px;
+    }
+
+    .pedidos, .detalhes {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .tabela {
+        min-width: 650px;
+    }
+}

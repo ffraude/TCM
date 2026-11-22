@@ -29,7 +29,7 @@
         <nav>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
-            <a href="#">Contato</a>
+            <a href="">Contato</a>
             <a href="perfil.aspx" id="linkConta" runat="server"><asp:Label ID="LblConta" runat="server" Text="Entrar"></asp:Label></a>
             <a href="carrinho.aspx" class="aiai"><img src="imgexxxx/carro_fofinho.png" alt="Logo" width="70" height="50"></a>
 

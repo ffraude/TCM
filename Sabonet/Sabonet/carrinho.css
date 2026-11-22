@@ -1,0 +1,213 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e5e5e5 50%, #e979e3 100%);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 12vh;
+    background: #2e4981;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+    header a {
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    header > a {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.btn-voltar-loja {
+    background: #ADD8F0;
+    color: #34566B !important;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .btn-voltar-loja:hover {
+        background: #87C5E5;
+        transform: translateY(-2px);
+    }
+
+#form1 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16vh 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+h1 {
+    width: 100%;
+    max-width: 1200px;
+    color: #2e4981;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #2e4981;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tabela {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .tabela th {
+        background: #2e4981;
+        color: antiquewhite;
+        padding: 15px;
+    }
+
+    .tabela td {
+        padding: 14px;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+    }
+
+    .tabela tr:nth-child(even) {
+        background: #f2f5f8;
+    }
+
+    .tabela tr:hover {
+        background: #e8f4fb;
+    }
+
+
+    .tabela input[type="submit"],
+    .tabela input[type="button"] {
+        padding: 8px 13px;
+        border: none;
+        border-radius: 7px;
+        background: #ADD8F0;
+        color: #34566B;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .tabela input[type="submit"]:hover,
+        .tabela input[type="button"]:hover {
+            background: #87C5E5;
+        }
+
+.endereco {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+    .endereco label {
+        color: #34566B;
+        font-weight: 600;
+    }
+
+    .endereco input[type="text"],
+    .endereco input[type="number"] {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .endereco input:focus {
+        border-color: #2e4981;
+    }
+
+#btnFinalizar {
+    width: 100%;
+    max-width: 250px;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #ADD8F0;
+    color: #34566B;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #btnFinalizar:hover {
+        background: #87C5E5;
+        transform: translateY(-2px);
+    }
+
+
+#lblTotal {
+    color: #2e4981;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 100px;
+        padding: 0 15px;
+    }
+
+        header > a {
+            font-size: 2rem;
+        }
+
+    .btn-voltar-loja {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    #form1 {
+        padding: 130px 12px 25px;
+    }
+
+    .endereco {
+        padding: 18px;
+    }
+
+    .tabela {
+        min-width: 650px;
+    }
+}
