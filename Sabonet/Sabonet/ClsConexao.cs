@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Sabonet
 {
@@ -203,5 +204,105 @@ namespace Sabonet
             return item;
         }
 
+        public Boolean AlterarNome(int id, string senhaAtual, string novoNome)
+        {
+            comando.Connection = conexao;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "AterarNomexxxx";
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.Add("@id_usu", SqlDbType.Int).Value = id;
+            comando.Parameters.Add("@senha_atual", SqlDbType.VarChar, 50).Value = senhaAtual;
+            comando.Parameters.Add("@novo_nome", SqlDbType.VarChar, 50).Value = novoNome;
+
+            SqlParameter retorno = new SqlParameter();
+            retorno.ParameterName = "@RETURN_VALUE";
+            retorno.SqlDbType = SqlDbType.Int;
+            retorno.Direction = ParameterDirection.ReturnValue;
+
+            comando.Parameters.Add(retorno);
+
+            try
+            {
+                conexao.Open();
+
+                comando.ExecuteNonQuery();
+
+                return Convert.ToInt32(retorno.Value) == 1;
+            }
+            finally
+            {
+                if (conexao.State == ConnectionState.Open)
+                    conexao.Close();
+            }
+        }
+        public Boolean AlterarEmail(int id, string senhaAtual, string novoEmail)
+        {
+            comando.Connection = conexao;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "AlterarEmailexxxx";
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.Add("@id_usu", SqlDbType.Int).Value = id;
+            comando.Parameters.Add("@senha_atual", SqlDbType.VarChar, 50).Value = senhaAtual;
+            comando.Parameters.Add("@novo_email", SqlDbType.VarChar, 40).Value = novoEmail;
+
+            SqlParameter retorno = new SqlParameter();
+            retorno.ParameterName = "@RETURN_VALUE";
+            retorno.SqlDbType = SqlDbType.Int;
+            retorno.Direction = ParameterDirection.ReturnValue;
+
+            comando.Parameters.Add(retorno);
+
+            try
+            {
+                conexao.Open();
+
+                comando.ExecuteNonQuery();
+
+                return Convert.ToInt32(retorno.Value) == 1;
+            }
+            finally
+            {
+                if (conexao.State == ConnectionState.Open)
+                    conexao.Close();
+            }
+        }
+
+        public Boolean AlterarSenha(int id, string senhaAtual, string novoEmail)
+        {
+            comando.Connection = conexao;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "AlterarSenhexxxx";
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.Add("@id_usu", SqlDbType.Int).Value = id;
+            comando.Parameters.Add("@senha_atual", SqlDbType.VarChar, 50).Value = senhaAtual;
+            comando.Parameters.Add("@novo_email", SqlDbType.VarChar, 50).Value = novoEmail;
+
+            SqlParameter retorno = new SqlParameter();
+            retorno.ParameterName = "@RETURN_VALUE";
+            retorno.SqlDbType = SqlDbType.Int;
+            retorno.Direction = ParameterDirection.ReturnValue;
+
+            comando.Parameters.Add(retorno);
+
+            try
+            {
+                conexao.Open();
+
+                comando.ExecuteNonQuery();
+
+                return Convert.ToInt32(retorno.Value) == 1;
+            }
+            finally
+            {
+                if (conexao.State == ConnectionState.Open)
+                    conexao.Close();
+            }
+        }
     }
 }

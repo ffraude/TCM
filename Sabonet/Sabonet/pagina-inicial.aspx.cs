@@ -15,7 +15,7 @@ namespace Sabonet
             int id = Convert.ToInt16(Session["idUsuario"]);
             string resultadoQuery = conexao.getNomeUsuario(id);
             Session["Nome"] = resultadoQuery;
-            if (Session["idUsuario"] != null || Convert.ToInt16(Session["idUsuario"]) != 0)
+            if (Session["idUsuario"] != null && Convert.ToInt16(Session["idUsuario"]) != 0 && Session["Nome"] != null && !Session["Nome"].ToString().Equals(""))
             {
                 LblBoasVindas.Text = "Bem-vindo(a) à Sabo.net, " + resultadoQuery + "!";
                 LblConta.Text = resultadoQuery;

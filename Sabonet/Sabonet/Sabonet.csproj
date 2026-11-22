@@ -67,8 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="editar-email.aspx" />
     <Content Include="editar-nome.aspx" />
     <Content Include="carrinho.aspx" />
+    <Content Include="editar-senha.aspx" />
     <Content Include="imgexxxx\aura_maracuja.jpg" />
     <Content Include="imgexxxx\baunilha.jpg" />
     <Content Include="imgexxxx\bebe.jpg" />
@@ -101,6 +103,13 @@
     </Compile>
     <Compile Include="ClsCarrinho.cs" />
     <Compile Include="ClsConexao.cs" />
+    <Compile Include="editar-email.aspx.cs">
+      <DependentUpon>editar-email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editar-email.aspx.designer.cs">
+      <DependentUpon>editar-email.aspx</DependentUpon>
+    </Compile>
     <Compile Include="editar-nome.aspx.cs">
       <DependentUpon>editar-nome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,6 +118,13 @@
       <DependentUpon>editar-nome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClsItemCarrinho.cs" />
+    <Compile Include="editar-senha.aspx.cs">
+      <DependentUpon>editar-senha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editar-senha.aspx.designer.cs">
+      <DependentUpon>editar-senha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="introducao.aspx.cs">
       <DependentUpon>introducao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

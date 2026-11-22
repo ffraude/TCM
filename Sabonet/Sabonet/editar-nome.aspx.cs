@@ -20,7 +20,7 @@ namespace Sabonet
             {
                 id = 0;
             }
-            ClsConexao conexao = new ClsConexao();
+            
             if (id == 0)
             {
                 Response.Redirect("introducao.aspx");
@@ -39,7 +39,23 @@ namespace Sabonet
 
         protected void BtnSalvar_Click(object sender, EventArgs e)
         {
-            
+            if(TxtSenha.Text.Equals("") || TxtUsu.Text.Equals(""))
+            {
+                LblAlerta.Text = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            ClsConexao conexao = new ClsConexao();
+            bool sucesso = conexao.AlterarNome(id, TxtSenha.Text, TxtUsu.Text);
+            if (sucesso)
+            {
+                Session["Nome"] = TxtUsu.Text;
+                Response.Redirect("perfil.aspx");
+            }
+            else
+            {
+                LblAlerta.Text = "Senha incorreta. Tente novamente.";
+            }
         }
     }
 }

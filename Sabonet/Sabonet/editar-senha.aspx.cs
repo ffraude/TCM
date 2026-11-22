@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Sabonet
+{
+    public partial class editar_senha : System.Web.UI.Page
+    {
+        int id;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt16(Session["idUsuario"]);
+            }
+            catch
+            {
+                id = 0;
+            }
+
+            if (id == 0)
+            {
+                Response.Redirect("introducao.aspx");
+            }
+
+            try
+            {
+                LblConta.Text = Session["Nome"].ToString();
+            }
+            catch
+            {
+
+            }
+        }
+        protected void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            if (TxtSenha.Text.Equals("") || TxtUsu.Text.Equals(""))
+            {
+                LblAlerta.Text = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            ClsConexao conexao = new ClsConexao();
+            bool sucesso = conexao.AlterarSenha(id, TxtSenha.Text, TxtUsu.Text);
+            if (sucesso)
+            {
+                Session["senha"] = TxtUsu.Text;
+                Response.Redirect("perfil.aspx");
+            }
+            else
+            {
+                LblAlerta.Text = "Senha incorreta. Tente novamente.";
+            }
+        }
+    }
+}
