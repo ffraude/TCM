@@ -13,7 +13,7 @@ namespace Sabonet
         //String de conexão GENÉRICA, lembra de mudar quando você abrir o banco na escola!!!!
         //String de conexão do notebook do Máximo: DESKBOTTOM\SQLEXPRESS
         private string strConexao =
-            @"Data Source=JJe;
+            @"Data Source=DESKBOTTOM\SQLEXPRESS;
               Initial Catalog=DBresenhexxxx;
               Integrated Security=True;";
 

@@ -47,7 +47,7 @@
         </div>
             <div class="div-perfil">
                 <p>Sua Senha:</p>
-                <p><asp:TextBox ID="TxtSenha" runat="server"></asp:TextBox></p>
+                <p><asp:TextBox ID="TxtSenha" runat="server" TextMode="Password"></asp:TextBox></p>
             </div>
                 
             <div class="div-perfil">

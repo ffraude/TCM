@@ -44,7 +44,7 @@
 
         <div>
             <p>Senha:</p>
-            <asp:TextBox ID="TxtSenha" runat="server" CssClass="campo"></asp:TextBox>
+            <asp:TextBox ID="TxtSenha" runat="server" CssClass="campo" TextMode="Password"></asp:TextBox>
             <asp:Label ID="LblAlerta" runat="server" Text="" ForeColor="Red"></asp:Label>
         </div>
 
