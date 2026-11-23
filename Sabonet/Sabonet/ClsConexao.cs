@@ -13,7 +13,7 @@ namespace Sabonet
         //String de conexão GENÉRICA, lembra de mudar quando você abrir o banco na escola!!!!
         //String de conexão do notebook do Máximo: DESKBOTTOM\SQLEXPRESS
         private string strConexao =
-            @"Data Source=DESKBOTTOM\SQLEXPRESS;
+            @"Data Source=JJe;
               Initial Catalog=DBresenhexxxx;
               Integrated Security=True;";
 
@@ -637,6 +637,58 @@ namespace Sabonet
                 if (conexao.State == ConnectionState.Open)
                     conexao.Close();
             }
+        }
+
+        public DataTable ConsultarProdutos()
+        {
+            DataTable tabela = new DataTable();
+
+            Conectar();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(@"
+            SELECT id_prod, nome_prod, preco, estoque, ativo_prod
+            FROM Produto
+            ORDER BY id_prod", conexao))
+                {
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(cmd))
+                    {
+                        adaptador.Fill(tabela);
+                    }
+                }
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return tabela;
+        }
+
+        public DataTable ConsultarCategorias()
+        {
+            DataTable tabela = new DataTable();
+
+            Conectar();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    "SELECT id_cat, nome_cat FROM Categoria ORDER BY nome_cat", conexao))
+                {
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(cmd))
+                    {
+                        adaptador.Fill(tabela);
+                    }
+                }
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return tabela;
         }
 
         public Boolean ConsultarAcesso(int id)

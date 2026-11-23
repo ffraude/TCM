@@ -1,17 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Sabonet
 {
-    public partial class administracao : System.Web.UI.Page
+    public partial class admin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["idUsuario"] == null)
+            {
+                Response.Redirect("login.aspx");
+                return;
+            }
 
+            int idUsuario = Convert.ToInt32(Session["idUsuario"]);
+
+            ClsConexao conexao = new ClsConexao();
+
+            if (!conexao.ConsultarAcesso(idUsuario))
+            {
+                Response.Redirect("louja.aspx");
+                return;
+            }
         }
     }
 }

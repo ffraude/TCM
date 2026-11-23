@@ -32,7 +32,7 @@
             <a href="admin.aspx" id="linkAdmin" runat="server" style="display: none;">Administração</a>
             <a href="louja.aspx">Loja</a>
             <a href="sobre.aspx">Sobre nós</a>
-            <a href="#">Contato</a>
+            <a href="Noscontate.aspx">Contato</a>
             <a href="perfil.aspx" id="linkConta" runat="server">Entrar</a>
         </nav>
     </header>

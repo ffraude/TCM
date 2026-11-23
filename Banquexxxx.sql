@@ -269,4 +269,10 @@ FOREIGN KEY (usu_id_end)
 REFERENCES Endereco(id_end);
 SELECT id_usu, nome_usu, usu_id_end FROM Usuario;
 
+ALTER TABLE Produto
+ADD imagem_prod VARCHAR(255);
+
+ALTER TABLE Produto
+ADD ativo_prod BIT NOT NULL DEFAULT 1;
+
 insert into Usuario (nome_usu, email_usu, senha_usu, acesso_usu) values ('Luiz Bombom Ricardo', 'luiz.bombom@gmail.com', 'Senhex_Fortex', 1)

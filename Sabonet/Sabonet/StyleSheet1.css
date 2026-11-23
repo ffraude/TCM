@@ -16,8 +16,6 @@ body {
     background: linear-gradient(135deg, #e5e5e5 50%, #e979e3 100%);
 }
 
-/* CABEÇALHO */
-
 header {
     position: fixed;
     top: 0;
@@ -41,8 +39,6 @@ header {
         font-weight: bold;
     }
 
-/* NAVEGAÇÃO */
-
 nav {
     display: flex;
     align-items: center;
@@ -59,8 +55,6 @@ nav {
             transition: 0.3s;
             color: #87C5E5;
         }
-
-/* CONTEÚDO PRINCIPAL */
 
 main {
     width: 100%;
@@ -86,8 +80,6 @@ main {
         margin-bottom: 30px;
     }
 
-/* BOTÃO DE COMPRAS */
-
 .botao-compras {
     display: inline-block;
     padding: 15px 35px;
@@ -106,8 +98,6 @@ main {
         background: #87C5E5;
         transform: translateY(-2px);
     }
-
-/* ELEMENTOS DO FORMULÁRIO ORIGINAL */
 
 h2 {
     color: #e6e6e6;
@@ -195,10 +185,6 @@ h2 {
         margin-top: 20px;
     }
 
-
-
-/* PERFIL */
-
 .sect-perfil {
     width: 65%;
     max-width: 850px;
@@ -212,8 +198,6 @@ h2 {
     box-shadow: 0 10px 30px rgba(46, 73, 129, 0.15);
     margin-top: 10vh;
 }
-
-/* TÍTULO */
 
 .titulo-perfil {
     text-align: center;
@@ -230,8 +214,6 @@ h2 {
         color: #34566B;
         font-size: 14px;
     }
-
-/* INFORMAÇÕES */
 
 .div-perfil {
     display: flex;
@@ -264,8 +246,6 @@ h2 {
     font-weight: 600;
 }
 
-/* LINKS DE EDIÇÃO */
-
 .link-editar {
     text-decoration: none;
     color: #2e4981;
@@ -281,8 +261,6 @@ h2 {
         background: #2e4981;
         color: antiquewhite;
     }
-
-/* BOTÕES DE AÇÃO */
 
 .acoes-perfil {
     display: flex;
@@ -332,8 +310,6 @@ h2 {
     height: auto;
     display: contents;
 }
-
-/* RESPONSIVIDADE */
 
 .confirmar:hover {
     background: #20365f;

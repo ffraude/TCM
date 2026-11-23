@@ -68,6 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
+    <Content Include="admin.css" />
+    <Content Include="adminAlterarProduto.aspx" />
+    <Content Include="adminContas.aspx" />
+    <Content Include="adminContas.css" />
+    <Content Include="adminEstoque.aspx" />
+    <Content Include="adminPermissoes.aspx" />
+    <Content Include="adminPermissoes.css" />
+    <Content Include="adminProdutos.aspx" />
+    <Content Include="adminProdutos.css" />
     <Content Include="bolhas.css" />
     <Content Include="carrinho.css" />
     <Content Include="editar-email.aspx" />
@@ -81,8 +90,11 @@
     <Content Include="imgexxxx\carro_fofinho.png" />
     <Content Include="imgexxxx\frutas_vermelhas.jpg" />
     <Content Include="imgexxxx\granado_azul.jpg" />
+    <Content Include="imgexxxx\jjuussee.jpeg" />
+    <Content Include="imgexxxx\juse.jpeg" />
     <Content Include="imgexxxx\lavanda.jpg" />
     <Content Include="imgexxxx\maracuja_ekos.jpg" />
+    <Content Include="imgexxxx\maximiliano.jpeg" />
     <Content Include="imgexxxx\protex_aveia.jpg" />
     <Content Include="imgexxxx\rosas.jpg" />
     <Content Include="introducao.aspx" />
@@ -91,6 +103,8 @@
     <Content Include="louja.css" />
     <Content Include="meusPedidos.aspx" />
     <Content Include="meusPedidos.css" />
+    <Content Include="Noscontate.aspx" />
+    <Content Include="Noscontate.css" />
     <Content Include="pagina-inicial.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="signup.aspx" />
@@ -105,6 +119,41 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAlterarProduto.aspx.cs">
+      <DependentUpon>adminAlterarProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAlterarProduto.aspx.designer.cs">
+      <DependentUpon>adminAlterarProduto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminContas.aspx.cs">
+      <DependentUpon>adminContas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminContas.aspx.designer.cs">
+      <DependentUpon>adminContas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEstoque.aspx.cs">
+      <DependentUpon>adminEstoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEstoque.aspx.designer.cs">
+      <DependentUpon>adminEstoque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminPermissoes.aspx.cs">
+      <DependentUpon>adminPermissoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminPermissoes.aspx.designer.cs">
+      <DependentUpon>adminPermissoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminProdutos.aspx.cs">
+      <DependentUpon>adminProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminProdutos.aspx.designer.cs">
+      <DependentUpon>adminProdutos.aspx</DependentUpon>
     </Compile>
     <Compile Include="carrinho.aspx.cs">
       <DependentUpon>carrinho.aspx</DependentUpon>
@@ -164,6 +213,13 @@
     </Compile>
     <Compile Include="meusPedidos.aspx.designer.cs">
       <DependentUpon>meusPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Noscontate.aspx.cs">
+      <DependentUpon>Noscontate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Noscontate.aspx.designer.cs">
+      <DependentUpon>Noscontate.aspx</DependentUpon>
     </Compile>
     <Compile Include="pagina-inicial.aspx.cs">
       <DependentUpon>pagina-inicial.aspx</DependentUpon>
